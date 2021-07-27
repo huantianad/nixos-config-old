@@ -1,7 +1,6 @@
 with import <nixpkgs> {};
 
-pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-  {
+pkgs.vscode-utils.extensionsFromVscodeMarketplace [  {
     name = "codesnap";
     publisher = "adpyke";
     version = "1.3.4";
@@ -46,8 +45,8 @@ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
   {
     name = "vscode-github-actions";
     publisher = "cschleiden";
-    version = "0.20.2";
-    sha256 = "0wbx9v0w85xvhb24k230wfxi8wci5qg75kbxbmbp1ajxl4h84zfp";
+    version = "0.20.3";
+    sha256 = "1b3nmdbnm474j8fhimm220gdd8nrypw138xm787y6lhirh92pcgf";
   }
   {
     name = "vscode-html-css";
@@ -94,26 +93,26 @@ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
   {
     name = "python";
     publisher = "ms-python";
-    version = "2021.6.944021595";
-    sha256 = "17p1j0xd0crqv4wbs9qapvv4i8j9j446cbjqihpk9z6ryriim5ip";
+    version = "2021.7.1060902895";
+    sha256 = "0lmf0q1p3wzm6lf7pb3ah4ck6abdwv5a6hmwcb1jwnwfwj0ylrc8";
   }
   {
     name = "vscode-pylance";
     publisher = "ms-python";
-    version = "2021.7.4";
-    sha256 = "1mjphm7ds7z1gdjc2ajlamayrs8v19yfdpjkckp3q79fxkplxvn5";
+    version = "2021.7.5";
+    sha256 = "185d21lgxwmmz5p3y90pn4qbax56qav497yhd5k2f4w1pni4jlq9";
   }
   {
     name = "jupyter";
     publisher = "ms-toolsai";
-    version = "2021.8.1036914918";
-    sha256 = "0diqca0csmall9kmp4fbifildv1bdsifwpvzkxxq0s3bymng136l";
+    version = "2021.8.1066828098";
+    sha256 = "1c2h77648h7vg7mv86yhxqn4krfj2q969p72hyglb5jhb1bsq8c2";
   }
   {
     name = "test-adapter-converter";
     publisher = "ms-vscode";
-    version = "0.0.17";
-    sha256 = "1zifc0h4c37wzbkjjkvvzh43hbc5g9v49bdq3xb6h5yr3fbm0pva";
+    version = "0.1.2";
+    sha256 = "1fc7l5fxdglqaj4sjr15n1q6vxcv0bcqm4afm0ibrzaj63xiw56k";
   }
   {
     name = "autodocstring";
@@ -140,4 +139,3 @@ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
     sha256 = "1phc4s0iglbiq77ih4g5llmmvdldf3rvyfdqfca2dn0vapdg73hv";
   }
 ]
-

@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      (import "${builtins.fetchTarball https://github.com/rycee/home-manager/archive/release-21.05.tar.gz}/nixos")
+      (import "${builtins.fetchTarball https://github.com/rycee/home-manager/archive/master.tar.gz}/nixos")
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -23,18 +23,12 @@
 
   networking.hostName = "huantian-nixos"; # Define your hostname.
   networking.networkmanager.enable = true;
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  # networking.wireless.interfaces = [ "wlp4s0" ];
-
-  # Set your time zone.
-  time.timeZone = "America/Phoenix";
-
-  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
-  # Per-interface useDHCP will be mandatory in the future, so this generated config
-  # replicates the default behaviour.
   networking.useDHCP = false;
   networking.interfaces.enp5s0.useDHCP = true;
   networking.interfaces.wlp4s0.useDHCP = true;
+
+  # Set your time zone.
+  time.timeZone = "America/Phoenix";
 
   # Mount my home parition
   fileSystems."/home" = {
@@ -49,9 +43,6 @@
     keyMap = "us";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
   # Disable mouse acceleration
   # TODO: This doesn't actually work
   services.xserver.libinput.enable = true;
@@ -64,6 +55,9 @@
       Option "AccelSpeed" "0"
     EndSection
   '';
+
+  # Enable the X11 windowing system.
+  services.xserver.enable = true;
 
   # Enable proprietary NVIDIA drivers
   services.xserver.videoDrivers = [ "nvidia" ];
