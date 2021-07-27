@@ -63,7 +63,7 @@
       Option "AccelProfile" "flat"
       Option "AccelSpeed" "0"
     EndSection
-  ''
+  '';
 
   # Enable proprietary NVIDIA drivers
   services.xserver.videoDrivers = [ "nvidia" ];
