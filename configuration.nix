@@ -108,7 +108,7 @@
   ] ++ [  # Command-line tools
     bat
     bpytop
-    curlFull
+    curl
     file
     git
     htop
