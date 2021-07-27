@@ -46,15 +46,8 @@
   # Disable mouse acceleration
   # TODO: This doesn't actually work
   services.xserver.libinput.enable = true;
-  services.xserver.config = ''
-    Section "InputClass"
-      Identifier "mouse accel"
-      Driver "libinput"
-      MatchIsPointer "on"
-      Option "AccelProfile" "flat"
-      Option "AccelSpeed" "0"
-    EndSection
-  '';
+  services.xserver.libinput.mouse.accelProfile = "flat";
+  services.xserver.libinput.mouse.accelSpeed = "0";
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -173,6 +166,8 @@
       enable = true;
       userName  = "huantian";
       userEmail = "davidtianli@gmail.com";
+      signing.key = "731A7A05AD8B3AE5956AC2274A0318E04E555DE5";
+      signing.signByDefault = true;
     };
 
     zsh.enable = true;
@@ -202,7 +197,8 @@
     ];
 
     vscode.enable = true;
-    vscode.extensions = import ./vscode.nix;
+    vscode.extensions = import ./vscode/extensions.nix;
+    vscode.userSettings = import ./vscode/settings.nix;
 
     ssh.enable = true; 
     ssh.matchBlocks = {
