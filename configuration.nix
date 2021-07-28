@@ -44,7 +44,6 @@
   };
 
   # Disable mouse acceleration
-  # TODO: This doesn't actually work
   services.xserver.libinput.enable = true;
   services.xserver.libinput.mouse.accelProfile = "flat";
   services.xserver.libinput.mouse.accelSpeed = "0";
