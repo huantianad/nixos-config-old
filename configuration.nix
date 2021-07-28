@@ -58,7 +58,7 @@
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
   services.xserver.windowManager.qtile.enable = true;
-  
+
   # Configure keymap in X11
   services.xserver.layout = "us";
   services.xserver.xkbOptions = "pc86";
@@ -157,7 +157,7 @@
   };
 
   # Home Manager neat
-  home-manager.users.huantian.nixpkgs.config.allowUnfreePredicate = 
+  home-manager.users.huantian.nixpkgs.config.allowUnfreePredicate =
     pkg: builtins.elem (lib.getName pkg) [ "vscode" ];
 
   home-manager.users.huantian.programs = {
@@ -199,7 +199,7 @@
     vscode.extensions = import ./vscode/extensions.nix;
     vscode.userSettings = import ./vscode/settings.nix;
 
-    ssh.enable = true; 
+    ssh.enable = true;
     ssh.matchBlocks = {
       huantian-server = {
         hostname = "192.168.0.102";
@@ -224,6 +224,13 @@
   home-manager.users.huantian.home.file = {
     ".xbindkeys/".source = ./xbindkeys;
   };
+
+  systemd.user.services.xbindkeys = {
+    wantedBy = [ "graphical.target" ];
+    after = [ "graphical.target" ];
+    script = "${pkgs.xbindkeys}/bin/xbindkeys -n -f /home/huantian/.xbindkeys/xbindkeysrc";
+  };
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
