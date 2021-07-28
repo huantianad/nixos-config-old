@@ -1,0 +1,6 @@
+"bash ~/.xbindkeys/backward.sh"
+  b:8
+
+"bash ~/.xbindkeys/forward.sh"
+  b:9
+
