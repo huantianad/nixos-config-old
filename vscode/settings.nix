@@ -21,7 +21,7 @@ with import <nixpkgs> {};
 
     "python.linting.flake8Args" = [
         "--max-line-length=120"
-        "--per-file-ignores=__init__.py =F401"
+        "--per-file-ignores=__init__.py:F401"
     ];
 
     "python.testing.unittestEnabled" = true;
