@@ -197,7 +197,7 @@
     ];
 
     vscode.enable = true;
-    vscode.extensions = import ./vscode/extensions.nix ++ import ./vscode/extraExtensions.nix
+    vscode.extensions = import ./vscode/extensions.nix ++ import ./vscode/extraExtensions.nix ++
       [ pkgs.vscode-extensions.ms-toolsai.jupyter ];
     vscode.userSettings = import ./vscode/settings.nix;
 
