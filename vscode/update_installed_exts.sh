@@ -68,7 +68,11 @@ do
     OWNER=$(echo "$i" | cut -d. -f1)
     EXT=$(echo "$i" | cut -d. -f2)
 
-    get_vsixpkg "$OWNER" "$EXT"
+    if [[ "$EXT" =~ "^(jupyter|test-adapter-converter)$" ]]; then
+        :
+    else
+        get_vsixpkg "$OWNER" "$EXT"
+    fi
 done
 
 # Close off the nix expression.

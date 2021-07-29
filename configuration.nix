@@ -78,10 +78,7 @@
   };
 
   nixpkgs.config = {
-    allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-      "vscode" "discord" "nvidia-x11" "nvidia-settings"
-      "steam" "steam-original" "steam-runtime"
-    ];
+    allowUnfree = true;
   };
 
   # List packages installed in system profile. To search, run:
@@ -159,8 +156,7 @@
   };
 
   # Home Manager neat
-  home-manager.users.huantian.nixpkgs.config.allowUnfreePredicate =
-    pkg: builtins.elem (lib.getName pkg) [ "vscode" ];
+  home-manager.users.huantian.nixpkgs.config.allowUnfree = true;
 
   home-manager.users.huantian.programs = {
     git = {
@@ -201,7 +197,8 @@
     ];
 
     vscode.enable = true;
-    vscode.extensions = import ./vscode/extensions.nix;
+    vscode.extensions = import ./vscode/extensions.nix ++ import ./vscode/extraExtensions.nix
+      [ pkgs.vscode-extensions.ms-toolsai.jupyter ];
     vscode.userSettings = import ./vscode/settings.nix;
 
     ssh.enable = true;
