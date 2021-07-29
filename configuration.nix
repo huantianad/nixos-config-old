@@ -92,11 +92,13 @@
     notepadqq
     pass
     passff-host
+    pass-git-helper
     vim_configurable (import ./vim.nix)
     vscode
     xbindkeys
     xdotool
     zsh-powerlevel10k
+    qmk
   ] ++ [  # Command-line tools
     bat
     bpytop
@@ -167,6 +169,9 @@
       userEmail = "davidtianli@gmail.com";
       signing.key = "731A7A05AD8B3AE5956AC2274A0318E04E555DE5";
       signing.signByDefault = true;
+      extraConfig = {
+        credential.helper = "${pkgs.pass-git-helper}/bin/pass-git-helper";
+      };
     };
 
     zsh.enable = true;
@@ -222,6 +227,14 @@
   };
 
   home-manager.users.huantian.home.file = {
+    ".config/pass-git-helper/git-pass-mapping.ini".text = ''
+      [DEFAULT]
+      username_extractor=regex_search
+      regex_username=^login: (.*)$
+
+      [github.com*]
+      target=github-credentials
+    '';
     ".xbindkeys/".source = ./xbindkeys;
   };
 
