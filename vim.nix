@@ -11,14 +11,14 @@ let
     };
   };
 in
-vim_configurable.customize {
+  vim_configurable.customize {
     # Specifies the vim binary name.
     # E.g. set this to "my-vim" and you need to type "my-vim" to open this vim
     # This allows to have multiple vim packages installed (e.g. with a different set of plugins)
     name = "my-vim";
-      vimrcConfig.packages.myVimPackage = with pkgs.vimPlugins; {
-        start = [ lightline-vim vim-toml vim-nix vim-cutlass ];
-      };
+    vimrcConfig.packages.myVimPackage = with pkgs.vimPlugins; {
+      start = [ lightline-vim vim-toml vim-nix vim-cutlass ];
+    };
     vimrcConfig.customRC = ''
       " Allow saving of files as sudo when I forgot to start vim using sudo.
       cmap w!! w !doas tee %
@@ -57,5 +57,5 @@ vim_configurable.customize {
       " Associate .rdlevel with json 
       au BufNewFile,BufRead *.rdlevel setlocal ft=json
     '';
-}
+  }
 
