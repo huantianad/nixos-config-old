@@ -38,12 +38,6 @@ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
     sha256 = "098vrm28b7jpzk0c2d0cgxvdw4jsswzf18cx1m9jwsm1j40fp5f4";
   }
   {
-    name = "split-lines";
-    publisher = "brainfit";
-    version = "1.0.2";
-    sha256 = "0pk6pqjf2d0a9jlmqc5aj30ah1aaqg6mb9cbfnxprxa7572z1wir";
-  }
-  {
     name = "vscode-html-css";
     publisher = "ecmel";
     version = "1.10.2";

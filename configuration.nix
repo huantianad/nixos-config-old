@@ -18,7 +18,7 @@
     efiSupport = true;
     version = 2;
     device = "nodev";
-    useOSProber = true;
+    #useOSProber = true;
   };
 
   networking.hostName = "huantian-nixos"; # Define your hostname.
@@ -42,6 +42,9 @@
   #   font = "Lat2-Terminus16";
     keyMap = "us";
   };
+
+  # Enable OpenGL
+  hardware.opengl.enable = true;
 
   # Disable mouse acceleration
   services.xserver.libinput.enable = true;
@@ -79,6 +82,14 @@
 
   nixpkgs.config = {
     allowUnfree = true;
+    packageOverrides = pkgs: {
+      steam = pkgs.steam.override {
+        extraPkgs = pkgs: [
+          pkgs.libssh
+          pkgs.brotli
+        ];
+      };
+    };
   };
 
   # List packages installed in system profile. To search, run:
@@ -96,6 +107,7 @@
     xdotool
     zsh-powerlevel10k
     qmk
+    zoom-us
   ] ++ [  # Command-line tools
     bat
     bpytop
@@ -107,9 +119,6 @@
     ripgrep
     unzip
     wget
-  ] ++ [  # Steam game deps
-    libssh
-    brotli
   ];
 
   # Install steam
