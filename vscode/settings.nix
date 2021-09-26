@@ -13,6 +13,7 @@ with import <nixpkgs> {};
 
     "nixEnvSelector.nixFile" = "\${workspaceRoot}/shell.nix";
 
+    "autoDocstring.startOnNewLine" = true;
     "python.analysis.typeCheckingMode" = "basic";
     "python.linting.flake8Path" = "${pkgs.python38Packages.flake8}/bin/flake8";
     "python.linting.pylintEnabled" = false;
