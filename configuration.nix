@@ -13,13 +13,15 @@
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot";
+  boot.loader.efi.efiSysMountPoint = "/boot/efi/";
   boot.loader.grub = { enable = true;
     efiSupport = true;
     version = 2;
     device = "nodev";
     #useOSProber = true;
   };
+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "huantian-nixos"; # Define your hostname.
   networking.networkmanager.enable = true;
@@ -41,6 +43,11 @@
   console = {
   #   font = "Lat2-Terminus16";
     keyMap = "us";
+  };
+
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [ fcitx5-chinese-addons fcitx5-configtool ];
   };
 
   # Enable OpenGL
@@ -76,8 +83,13 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    jack.enable = true;
+    # jack.enable = true;
     media-session.enable = true;
+  };
+
+  virtualisation.virtualbox.host = {
+    enable = true;
+    enableExtensionPack = true;
   };
 
   nixpkgs.config = {
@@ -108,6 +120,7 @@
     zsh-powerlevel10k
     qmk
     zoom-us
+    libreoffice-fresh
   ] ++ [  # Command-line tools
     bat
     bpytop
@@ -133,7 +146,7 @@
   users.mutableUsers = false;
   users.users.huantian = {
     isNormalUser = true;
-    home = "/home/huantian";
+    home = "/home/huantian/";
     extraGroups = [ "wheel" "networkmanager" "audio" ];
     shell = pkgs.zsh;
     passwordFile = "/etc/nixos/password-file";
@@ -253,13 +266,6 @@
     '';
     ".xbindkeys/".source = ./xbindkeys;
   };
-
-  systemd.user.services.xbindkeys = {
-    wantedBy = [ "graphical.target" ];
-    after = [ "graphical.target" ];
-    script = "${pkgs.xbindkeys}/bin/xbindkeys -n -f /home/huantian/.xbindkeys/xbindkeysrc";
-  };
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

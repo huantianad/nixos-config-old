@@ -3,6 +3,8 @@ with import <nixpkgs> {};
 let
   vim-cutlass = pkgs.vimUtils.buildVimPlugin {
     name = "vim-cutlass";
+    pname = "vim-cutlass";
+    vesion = "1.2";
     src = pkgs.fetchFromGitHub {
       owner = "svermeulen";
       repo = "vim-cutlass";
@@ -17,7 +19,7 @@ in
     # This allows to have multiple vim packages installed (e.g. with a different set of plugins)
     name = "my-vim";
     vimrcConfig.packages.myVimPackage = with pkgs.vimPlugins; {
-      start = [ lightline-vim vim-toml vim-nix vim-cutlass ];
+      start = [ lightline-vim vim-toml vim-nix vim-cutlass vimsence ];
     };
     vimrcConfig.customRC = ''
       " Allow saving of files as sudo when I forgot to start vim using sudo.

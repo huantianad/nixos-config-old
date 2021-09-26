@@ -19,10 +19,13 @@ with import <nixpkgs> {};
     "python.linting.flake8Enabled" = true;
     "python.linting.enabled" = true;
 
+    "python.sortImports.args" = ["-l" "120"];
     "python.linting.flake8Args" = [
         "--max-line-length=120"
         "--per-file-ignores=__init__.py:F401"
     ];
+
+    "autoDocstring.startOnNewLine" = true;
 
     "python.testing.unittestEnabled" = true;
     "python.testing.unittestArgs" = [
@@ -34,8 +37,19 @@ with import <nixpkgs> {};
     ];
 
     "python.languageServer" = "Pylance";
-    # "python.pythonPath" = "/home/huantian/.pyenv/versions/3.9.2/envs/Testing/bin/python";
 
+    "java.configuration.runtimes" = [
+        {
+          "name" = "JavaSE-16";
+          "path" = "${adoptopenjdk-hotspot-bin-16}";
+          "default" = true;
+        }
+        {
+          "name" = "JavaSE-1.8";
+          "path" = "${adoptopenjdk-hotspot-bin-8}";
+          "default" = true;
+        }
+    ];
     "editor.tokenColorCustomizations" = {
         "textMateRules" = [
             {
@@ -72,6 +86,10 @@ with import <nixpkgs> {};
         "**/__pycache__" = true;
         ".idea" = true;
         ".directory" = true;
+        "**/.classpath" = true;
+        "**/.project" = true;
+        "**/.settings" =  true;
+        "**/.factorypath" = true;
     };
     "files.associations" = {
         "**/*.html" = "html";

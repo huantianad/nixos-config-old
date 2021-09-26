@@ -10,8 +10,8 @@ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
   {
     name = "TabOut";
     publisher = "albert";
-    version = "0.2.0";
-    sha256 = "0vzgxw0ppx59k1d5xq8kl3f1bz0gdmy2ll0gc16i0c6k08bza5dn";
+    version = "0.2.1";
+    sha256 = "14dw7k80g6yf94s8446vz70zg5khsbhisz89633k7ymmajx4hq6n";
   }
   {
     name = "nix-env-selector";
@@ -34,8 +34,14 @@ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
   {
     name = "vscode-tailwindcss";
     publisher = "bradlc";
-    version = "0.6.13";
-    sha256 = "098vrm28b7jpzk0c2d0cgxvdw4jsswzf18cx1m9jwsm1j40fp5f4";
+    version = "0.6.14";
+    sha256 = "07n4ayc3nl63a40fhzwfrazvqm10qzb6i3qp43dpphld60b2mdz0";
+  }
+  {
+    name = "better-toml";
+    publisher = "bungcip";
+    version = "0.3.2";
+    sha256 = "08lhzhrn6p0xwi0hcyp6lj9bvpfj87vr99klzsiy8ji7621dzql3";
   }
   {
     name = "vscode-html-css";
@@ -46,8 +52,8 @@ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
   {
     name = "vscode-test-explorer";
     publisher = "hbenl";
-    version = "2.20.4";
-    sha256 = "0z17a99rqmgpmjzzgpic0kl3vcankynbg8dzjl7iij2anpxdk6f3";
+    version = "2.21.1";
+    sha256 = "022lnkq278ic0h9ggpqcwb3x3ivpcqjimhgirixznq0zvwyrwz3w";
   }
   {
     name = "discord-vscode";
@@ -64,26 +70,26 @@ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
   {
     name = "restructuredtext";
     publisher = "lextudio";
-    version = "155.0.0";
-    sha256 = "04jqywywxmhpvxz1nxd2hamjd9sg880r4g1wxaz2x4f51z0xda8k";
+    version = "165.0.0";
+    sha256 = "1hmghch2w89bf4nq7rmr7ffkga5hak61zahhxg025cm0hgr7pyvi";
   }
   {
     name = "vscode-python-test-adapter";
     publisher = "littlefoxteam";
-    version = "0.6.8";
-    sha256 = "1lws5xv8wmmh4qai2iwrb2l00h26psbrx5fijg8311z9hv507fny";
+    version = "0.7.0";
+    sha256 = "1jw4gnnpwd94aq2gi98ms3rsm8pmq9h2cz8y5zwgzyv9nzmzn34j";
   }
   {
     name = "python";
     publisher = "ms-python";
-    version = "2021.7.1060902895";
-    sha256 = "0lmf0q1p3wzm6lf7pb3ah4ck6abdwv5a6hmwcb1jwnwfwj0ylrc8";
+    version = "2021.9.1230869389";
+    sha256 = "0v4v5fcf2z1cys2if4k64qdwvr96hqvqw31fhdrrwwbgmx8cxjj3";
   }
   {
     name = "vscode-pylance";
     publisher = "ms-python";
-    version = "2021.7.5";
-    sha256 = "185d21lgxwmmz5p3y90pn4qbax56qav497yhd5k2f4w1pni4jlq9";
+    version = "2021.9.2";
+    sha256 = "0zm0x16cwmhxaqrxxim608gbfqvx18yikcnn5lyw87rxm4zr8syp";
   }
   {
     name = "autodocstring";
@@ -94,8 +100,8 @@ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
   {
     name = "material-icon-theme";
     publisher = "PKief";
-    version = "4.8.0";
-    sha256 = "06xsb1dqqdgr9ack0d92rc96qkhymyfba4msm884l52scd6jr7mx";
+    version = "4.10.0";
+    sha256 = "119zpdx2hx9d1xb3d9d773b88i2awr62ivmmnhxm9zp77x9y6b70";
   }
   {
     name = "vscode-commons";
@@ -106,7 +112,7 @@ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
   {
     name = "vscode-yaml";
     publisher = "redhat";
-    version = "0.21.1";
-    sha256 = "1phc4s0iglbiq77ih4g5llmmvdldf3rvyfdqfca2dn0vapdg73hv";
+    version = "0.22.0";
+    sha256 = "1ffsah3pwxfa8ya2c0a3q1wh5ngh621zgidfwl8iggnrl7nbwl3k";
   }
 ]
